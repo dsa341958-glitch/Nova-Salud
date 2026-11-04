@@ -1,6 +1,7 @@
 import { asyncHandler, paginar } from '../../utils/helpers.js';
 import { inventarioRepository as repo } from './inventario.repository.js';
 import { inventarioService } from './inventario.service.js';
+import { alertasService } from '../alertas/alertas.service.js';
 
 const respuestaPaginada = (clave, { filas, total }, { pagina, limite }) => ({
   ok: true,
@@ -34,5 +35,6 @@ export const kardex = asyncHandler(async (req, res) => {
 
 export const ajustar = asyncHandler(async (req, res) => {
   const resultado = await inventarioService.ajustar(req.body, req.user.id, req.ip);
+  alertasService.refrescar(); 
   res.status(201).json({ ok: true, ...resultado });
 });

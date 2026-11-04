@@ -11,6 +11,7 @@ import comprasRoutes from './modules/compras/compras.routes.js';
 import inventarioRoutes from './modules/inventario/inventario.routes.js';
 import clientesRoutes from './modules/clientes/clientes.routes.js';
 import ventasRoutes from './modules/ventas/ventas.routes.js';
+import alertasRoutes from './modules/alertas/alertas.routes.js';
 import { noEncontrado, manejarErrores } from './middlewares/error.middleware.js';
 
 const app = express();
@@ -38,6 +39,7 @@ app.use('/api/compras', comprasRoutes);
 app.use('/api/inventario', inventarioRoutes);
 app.use('/api/clientes', clientesRoutes);
 app.use('/api/ventas', ventasRoutes);
+app.use('/api/alertas', alertasRoutes);
 
 app.use(noEncontrado);
 app.use(manejarErrores);

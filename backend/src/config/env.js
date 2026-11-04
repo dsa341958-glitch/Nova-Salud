@@ -11,6 +11,10 @@ export const env = {
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '8h',
   bcryptRounds: Number(process.env.BCRYPT_ROUNDS) || 12,
+  alertas: {
+    cron: process.env.ALERTAS_CRON || '*/15 * * * *',
+    diasVencimiento: Number(process.env.STOCK_DIAS_ALERTA_VENCIMIENTO) || 60,
+  }
 };
 
 if (!env.jwtSecret || !env.db.user || !env.db.password || !env.db.database) {

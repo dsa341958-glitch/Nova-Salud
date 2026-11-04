@@ -1,9 +1,11 @@
 import { HttpError, asyncHandler, paginar } from '../../utils/helpers.js';
 import { comprasRepository as repo } from './compras.repository.js';
 import { comprasService } from './compras.service.js';
+import { alertasService } from '../alertas/alertas.service.js';
 
 export const registrar = asyncHandler(async (req, res) => {
   const id = await comprasService.registrar(req.body, req.user.id, req.ip);
+  alertasService.refrescar(); 
   res.status(201).json({ ok: true, compra: await repo.obtener(id) });
 });
 
