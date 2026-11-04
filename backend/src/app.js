@@ -9,6 +9,8 @@ import productosRoutes from './modules/productos/productos.routes.js';
 import proveedoresRoutes from './modules/proveedores/proveedores.routes.js';
 import comprasRoutes from './modules/compras/compras.routes.js';
 import inventarioRoutes from './modules/inventario/inventario.routes.js';
+import clientesRoutes from './modules/clientes/clientes.routes.js';
+import ventasRoutes from './modules/ventas/ventas.routes.js';
 import { noEncontrado, manejarErrores } from './middlewares/error.middleware.js';
 
 const app = express();
@@ -34,6 +36,8 @@ app.use('/api/productos', productosRoutes);
 app.use('/api/proveedores', proveedoresRoutes);
 app.use('/api/compras', comprasRoutes);
 app.use('/api/inventario', inventarioRoutes);
+app.use('/api/clientes', clientesRoutes);
+app.use('/api/ventas', ventasRoutes);
 
 app.use(noEncontrado);
 app.use(manejarErrores);
