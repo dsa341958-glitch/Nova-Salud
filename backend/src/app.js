@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import { pool } from './config/db.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import usuariosRoutes from './modules/usuarios/usuarios.routes.js';
+import categoriasRoutes from './modules/categorias/categorias.routes.js';
+import productosRoutes from './modules/productos/productos.routes.js';
 import { noEncontrado, manejarErrores } from './middlewares/error.middleware.js';
 
 const app = express();
@@ -24,6 +26,8 @@ app.get('/api/health', async (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/usuarios', usuariosRoutes);
+app.use('/api/categorias', categoriasRoutes);
+app.use('/api/productos', productosRoutes);
 
 app.use(noEncontrado);
 app.use(manejarErrores);
