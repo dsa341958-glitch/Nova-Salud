@@ -12,6 +12,7 @@ export const pool = mysql.createPool({
   charset: 'utf8mb4',
   timezone: '-05:00',
   dateStrings: true,   // las fechas llegan como texto, sin conversiones raras de zona horaria
+  decimalNumbers: true,
 });
 // Ejecuta fn dentro de una transacción: o se guarda todo o no se guarda nada
 export async function conTransaccion(fn) {
