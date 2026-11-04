@@ -13,3 +13,18 @@ export const pool = mysql.createPool({
   timezone: '-05:00',
   dateStrings: true,   // las fechas llegan como texto, sin conversiones raras de zona horaria
 });
+// Ejecuta fn dentro de una transacción: o se guarda todo o no se guarda nada
+export async function conTransaccion(fn) {
+  const conn = await pool.getConnection();
+  try {
+    await conn.beginTransaction();
+    const resultado = await fn(conn);
+    await conn.commit();
+    return resultado;
+  } catch (err) {
+    await conn.rollback();
+    throw err;
+  } finally {
+    conn.release();
+  }
+}
