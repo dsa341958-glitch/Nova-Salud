@@ -197,3 +197,12 @@ h2 { font-size: 1.1rem; margin: 0 0 1rem; }
 .chip-filtro { display: inline-flex; align-items: center; gap: .3rem; background: var(--verde-claro); color: var(--verde-osc);
   border-radius: 999px; padding: .25rem .4rem .25rem .8rem; font-size: .85rem; font-weight: 600; }
 .check-simple .input { width: auto; min-width: 0; }
+/* ===== Compras ===== */
+.linea-compra { display: grid; grid-template-columns: 2fr 1fr 1.2fr .8fr 1fr 36px; gap: .5rem; align-items: end; margin-bottom: .5rem; }
+.linea-compra .campo { margin-bottom: 0; }
+.linea-compra .btn-icono { margin-bottom: .35rem; }
+
+@media (max-width: 800px) {
+  .linea-compra { grid-template-columns: 1fr 1fr; padding-bottom: .75rem; border-bottom: 1px solid var(--borde); }
+  .linea-compra .campo:first-child { grid-column: 1 / -1; }
+}
