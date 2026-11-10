@@ -7,6 +7,8 @@ import Pendiente from './components/Pendiente';
 import Ventas from './pages/Ventas/Ventas';
 import Productos from './pages/Productos/Productos';
 import Alertas from './pages/Alertas/Alertas';
+import Clientes from './pages/Clientes/Clientes';
+import Inventario from './pages/Inventario/Inventario';
 
 export default function App() {
   return (
@@ -17,7 +19,8 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="ventas" element={<Ventas />} />
-          <Route path="clientes" element={<Pendiente titulo="Clientes" />} />
+          <Route path="clientes" element={<Clientes />} />
+          <Route path="inventario" element={<Inventario />} />
           <Route path="productos" element={<Productos />} />
           <Route path="alertas" element={<Alertas />} /> 
 
