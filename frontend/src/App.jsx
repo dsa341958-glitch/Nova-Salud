@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Pendiente from './components/Pendiente';
+import Ventas from './pages/Ventas/Ventas';
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
       <Route element={<RutaProtegida />}>
         <Route element={<MainLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="ventas" element={<Pendiente titulo="Punto de venta" />} />
+          <Route path="ventas" element={<Ventas />} />
           <Route path="clientes" element={<Pendiente titulo="Clientes" />} />
           <Route path="productos" element={<Pendiente titulo="Productos" />} />
           <Route path="alertas" element={<Pendiente titulo="Alertas" />} />
