@@ -3,13 +3,14 @@ import RutaProtegida from './routes/RutaProtegida';
 import MainLayout from './layouts/MainLayout';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Pendiente from './components/Pendiente';
 import Ventas from './pages/Ventas/Ventas';
 import Productos from './pages/Productos/Productos';
 import Alertas from './pages/Alertas/Alertas';
 import Clientes from './pages/Clientes/Clientes';
 import Inventario from './pages/Inventario/Inventario';
 import Compras from './pages/Compras/Compras';
+import Reportes from './pages/Reportes/Reportes';
+import Usuarios from './pages/Usuarios/Usuarios';
 
 export default function App() {
   return (
@@ -28,11 +29,11 @@ export default function App() {
           <Route element={<RutaProtegida roles={['ADMIN', 'FARMACEUTICO']} />}>
             <Route path="inventario" element={<Inventario />} />
             <Route path="compras" element={<Compras />} />
-            <Route path="reportes" element={<Pendiente titulo="Reportes" />} />
+            <Route path="reportes" element={<Reportes />} />
           </Route>
 
           <Route element={<RutaProtegida roles={['ADMIN']} />}>
-            <Route path="usuarios" element={<Pendiente titulo="Usuarios" />} />
+            <Route path="usuarios" element={<Usuarios />} />
           </Route>
         </Route>
       </Route>

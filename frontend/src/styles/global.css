@@ -206,3 +206,15 @@ h2 { font-size: 1.1rem; margin: 0 0 1rem; }
   .linea-compra { grid-template-columns: 1fr 1fr; padding-bottom: .75rem; border-bottom: 1px solid var(--borde); }
   .linea-compra .campo:first-child { grid-column: 1 / -1; }
 }
+/* ===== Reportes ===== */
+.barras-h { display: grid; gap: .6rem; }
+.barra-h-fila { display: grid; grid-template-columns: minmax(90px, 200px) 1fr minmax(120px, auto); gap: .75rem; align-items: center; }
+.barra-h-etq { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; font-size: .9rem; }
+.barra-h-pista { background: var(--fondo); border-radius: 6px; height: 18px; overflow: hidden; }
+.barra-h { background: var(--verde); height: 100%; border-radius: 6px; min-width: 3px; }
+.barra-h-val { font-size: .85rem; color: var(--suave); text-align: right; white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .barra-h-fila { grid-template-columns: 1fr; gap: .2rem; }
+  .barra-h-val { text-align: left; }
+}
