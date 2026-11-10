@@ -24,7 +24,12 @@ export default function MainLayout() {
         .catch(() => {});
     cargar();
     const id = setInterval(cargar, 60000);
-    return () => { activo = false; clearInterval(id); };
+    window.addEventListener('alertas:cambio', cargar);
+    return () => {
+      activo = false;
+      clearInterval(id);
+      window.removeEventListener('alertas:cambio', cargar);
+    };
   }, [pathname]);
 
   const items = MENU.filter((i) => i.roles.includes(usuario.rol));

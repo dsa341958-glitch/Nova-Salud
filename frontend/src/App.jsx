@@ -5,6 +5,8 @@ import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Pendiente from './components/Pendiente';
 import Ventas from './pages/Ventas/Ventas';
+import Productos from './pages/Productos/Productos';
+import Alertas from './pages/Alertas/Alertas';
 
 export default function App() {
   return (
@@ -16,8 +18,8 @@ export default function App() {
           <Route index element={<Dashboard />} />
           <Route path="ventas" element={<Ventas />} />
           <Route path="clientes" element={<Pendiente titulo="Clientes" />} />
-          <Route path="productos" element={<Pendiente titulo="Productos" />} />
-          <Route path="alertas" element={<Pendiente titulo="Alertas" />} />
+          <Route path="productos" element={<Productos />} />
+          <Route path="alertas" element={<Alertas />} /> 
 
           <Route element={<RutaProtegida roles={['ADMIN', 'FARMACEUTICO']} />}>
             <Route path="inventario" element={<Pendiente titulo="Inventario" />} />

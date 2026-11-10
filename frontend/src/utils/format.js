@@ -12,3 +12,10 @@ export const diaCorto = (iso) => {
   const [, m, d] = String(iso).slice(0, 10).split('-');
   return `${d}/${m}`;
 };
+
+// "2026-11-10 14:35:20" -> "10/11/2026 14:35"
+export const fechaHora = (s) => {
+  const [f, h] = String(s).split(' ');
+  const [y, m, d] = f.split('-');
+  return `${d}/${m}/${y}${h ? ` ${h.slice(0, 5)}` : ''}`;
+};
