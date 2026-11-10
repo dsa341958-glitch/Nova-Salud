@@ -1,4 +1,4 @@
-import { LayoutDashboard, ShoppingCart, Users, Pill, Boxes, Truck, Bell, BarChart3, Shield } from 'lucide-react';
+import { LayoutDashboard, ShoppingCart, Receipt, Users, Pill, Boxes, Truck, Bell, BarChart3, Shield } from 'lucide-react';
 
 const TODOS = ['ADMIN', 'FARMACEUTICO', 'CAJERO'];
 const GESTION = ['ADMIN', 'FARMACEUTICO'];
@@ -6,6 +6,7 @@ const GESTION = ['ADMIN', 'FARMACEUTICO'];
 export const MENU = [
   { to: '/', texto: 'Inicio', icono: LayoutDashboard, roles: TODOS, fin: true },
   { to: '/ventas', texto: 'Punto de venta', icono: ShoppingCart, roles: TODOS },
+  { to: '/historial', texto: 'Historial de ventas', icono: Receipt, roles: TODOS },
   { to: '/clientes', texto: 'Clientes', icono: Users, roles: TODOS },
   { to: '/productos', texto: 'Productos', icono: Pill, roles: TODOS },
   { to: '/inventario', texto: 'Inventario', icono: Boxes, roles: GESTION },
@@ -13,4 +14,5 @@ export const MENU = [
   { to: '/alertas', texto: 'Alertas', icono: Bell, roles: TODOS, badge: true },
   { to: '/reportes', texto: 'Reportes', icono: BarChart3, roles: GESTION },
   { to: '/usuarios', texto: 'Usuarios', icono: Shield, roles: ['ADMIN'] },
+  
 ];

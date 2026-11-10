@@ -1,3 +1,4 @@
+SET NAMES utf8mb4;
 CREATE DATABASE IF NOT EXISTS botica_nova_salud
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE botica_nova_salud;

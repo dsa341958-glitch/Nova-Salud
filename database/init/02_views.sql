@@ -1,3 +1,4 @@
+SET NAMES utf8mb4;
 USE botica_nova_salud;
 
 CREATE OR REPLACE VIEW v_stock_producto AS

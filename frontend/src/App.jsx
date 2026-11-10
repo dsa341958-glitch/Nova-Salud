@@ -11,6 +11,7 @@ import Inventario from './pages/Inventario/Inventario';
 import Compras from './pages/Compras/Compras';
 import Reportes from './pages/Reportes/Reportes';
 import Usuarios from './pages/Usuarios/Usuarios';
+import Historial from './pages/Ventas/Historial';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="ventas" element={<Ventas />} />
+          <Route path="historial" element={<Historial />} />
           <Route path="clientes" element={<Clientes />} />
           <Route path="inventario" element={<Inventario />} />
           <Route path="productos" element={<Productos />} />

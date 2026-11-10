@@ -1,3 +1,4 @@
+SET NAMES utf8mb4;
 USE botica_nova_salud;
 
 INSERT INTO roles (nombre) VALUES ('ADMIN'), ('FARMACEUTICO'), ('CAJERO');
