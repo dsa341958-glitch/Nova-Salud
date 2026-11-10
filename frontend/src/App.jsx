@@ -12,6 +12,7 @@ import Compras from './pages/Compras/Compras';
 import Reportes from './pages/Reportes/Reportes';
 import Usuarios from './pages/Usuarios/Usuarios';
 import Historial from './pages/Ventas/Historial';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -37,10 +38,9 @@ export default function App() {
           <Route element={<RutaProtegida roles={['ADMIN']} />}>
             <Route path="usuarios" element={<Usuarios />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Route>
-
-      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

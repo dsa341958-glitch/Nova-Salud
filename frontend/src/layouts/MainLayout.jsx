@@ -4,6 +4,7 @@ import { Menu, LogOut, Pill } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/client';
 import { MENU } from '../routes/menu';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 export default function MainLayout() {
   const { usuario, salir } = useAuth();
@@ -69,7 +70,9 @@ export default function MainLayout() {
           </button>
           <span className="topbar-titulo">Nova Salud</span>
         </header>
-        <main className="main"><Outlet /></main>
+        <main className="main">
+          <ErrorBoundary key={pathname}><Outlet /></ErrorBoundary>
+        </main>
       </div>
     </div>
   );

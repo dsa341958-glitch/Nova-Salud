@@ -16,6 +16,7 @@ api.interceptors.response.use(
     if (err.response?.status === 401 && !err.config?.url?.includes('/auth/login')) {
       localStorage.removeItem('token');
       localStorage.removeItem('usuario');
+      sessionStorage.setItem('sesion_expirada', '1');
       window.dispatchEvent(new Event('auth:expirada'));
     }
     return Promise.reject(err);

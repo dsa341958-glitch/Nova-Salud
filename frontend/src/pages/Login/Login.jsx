@@ -12,6 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [enviando, setEnviando] = useState(false);
+  const expirada = sessionStorage.getItem('sesion_expirada') === '1';
 
   if (usuario) return <Navigate to="/" replace />;
 
@@ -21,6 +22,7 @@ export default function Login() {
     setEnviando(true);
     try {
       await entrar(email.trim(), password);
+      sessionStorage.removeItem('sesion_expirada');
       navigate(location.state?.desde?.pathname || '/', { replace: true });
     } catch (err) {
       setError(mensajeError(err));
@@ -45,6 +47,9 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)} />
         </label>
 
+        {expirada && !error && (
+          <div className="aviso">Tu sesión expiró. Ingresa de nuevo para continuar.</div>
+        )}
         {error && <div className="error" role="alert">{error}</div>}
 
         <button className="btn btn-primario" disabled={enviando}>
